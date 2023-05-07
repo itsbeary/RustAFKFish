@@ -4,6 +4,11 @@ import pytesseract
 import cv2 
 import numpy as np
 
+xDefault = 720
+yDefault = 603
+
+x = 720
+y = 603
 
 def press_button():
     pyautogui.keyDown('a')
@@ -26,12 +31,6 @@ def read_item():
 def gainedItem():
     return pyautogui.pixelMatchesColor(1812, 763, (88, 101, 66), tolerance=10)
 
-xDefault = 720
-yDefault = 603
-
-x = 720
-y = 603
-
 def checkInventory():
      global x
      global xDefault
@@ -49,8 +48,6 @@ def checkInventory():
          return False;
      else: 
           return True
-     
-     
 
 #while True:
 #     sleep(0.5)
