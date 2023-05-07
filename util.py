@@ -26,3 +26,39 @@ def read_item():
 def gainedItem():
     return pyautogui.pixelMatchesColor(1812, 763, (88, 101, 66), tolerance=10)
 
+xDefault = 720
+yDefault = 603
+
+x = 720
+y = 603
+
+def checkInventory():
+     global x
+     global xDefault
+     global y
+     pyautogui.press('e')
+     sleep(0.5)
+     pyautogui.leftClick(x, y)
+     x = x + 90;
+     if(x >= 1200):
+          x = xDefault
+          y = y + 90
+     if(y >= 920):
+         x = xDefault;
+         y = yDefault;
+         return False;
+     else: 
+          return True
+     
+     
+
+#while True:
+#     sleep(0.5)
+#     if(checkInventory()):
+#          print(read_item())
+#     else:
+#          print("finished")
+#          exit()
+          
+
+     
